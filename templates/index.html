@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block table_head %}
+    <th>Symbol</th>
+    <th>Shares</th>
+    <th>Current Price</th>
+    <th>Total</th>
+{% endblock %}
+
+{% block table_body %}
+    {% if purchases != None %}
+        {% for row in purchases %}
+            <tr>
+                <td>{{ row["symbol"] }}</td>
+                <td>{{ row["SUM(shares)"] }}</td>
+                <td>{{ row["current_price"] }}</td>
+                <td>{{ row["total"] }}</td>
+            </tr>
+        {% endfor %}
+    {% endif %}
+    <tr>
+        <td class="empty-cell">Cash</td>
+        <td class="empty-cell"></td>
+        <td class="empty-cell"></td>
+        <td>{{ cash }}</td>
+    </tr>
+    <tr>
+        <td class="empty-cell"></td>
+        <td class="empty-cell"></td>
+        <td class="empty-cell"></td>
+        <td>{{ balance }}</td>
+    </tr>
+{% endblock %}
