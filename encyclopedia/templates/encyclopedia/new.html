@@ -1,0 +1,26 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create New Page
+{% endblock %}
+
+{% block body %}
+    {% if existed %}
+        <h1>ERROR</h1>
+        <p>An encyclopedia entry already exists with the provided title</p>
+    {% else %}
+        <h1>Create New Entry</h1>
+        <form id="newEntry" method="POST">
+            {% csrf_token %}
+            <div>
+                <label>Put the title of entry page here:</label>
+                <input type="text" name="title">
+            </div>
+            <div>
+                <label>Put the content of entry page here:</label>
+                <textarea form="newEntry" name="content" required="required" row="1" col="10"></textarea>
+            </div>
+            <input type="submit" value="Save">
+        </form>
+    {% endif %}
+{% endblock %}
