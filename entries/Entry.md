@@ -1,3 +1,0 @@
-# Entry
-
-A new entry

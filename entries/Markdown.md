@@ -1,1 +1,0 @@
-Markdown is a text-to-HTML conversion tool for web writers.
