@@ -1,0 +1,75 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div class="view" id="compose-view">
+        <form id="form">
+            <div id="form-group">
+                <label for="form-body-input">New Post</label>
+                <textarea class="form-control" id="form-body-input" rows="3"></textarea>
+                <button id="post-button" href="#" type="submit" class="btn btn-primary">Post</button> 
+            </div>
+        </form>
+        
+    </div>
+    <div id="profile-view">
+        <h2 id="username" style="font-family: cursive;"></h2>
+        <button href="#" id="profile-follow"></button>
+        <h4>Followers</h4>
+        <p id="view-followers"></p>
+        <h4 id="following-label">Following</h4>
+        <div id="following-view"></div>
+        <h4>Posts</h4>
+    </div>
+    <div class="view" id="post-view">
+        <div id="post-content"></div>
+        <nav aria-label="...">
+            <ul class="pagination">
+            </ul>
+        </nav>
+    </div>
+    <script>
+
+        // Js for profile
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Set onclick animation for btn-unfollow
+            document.querySelector('#following-view').onclick = (event) => {
+                if (event.target.classList.contains("btn-unfollow")) {
+    
+                    fetch(`/follow/${event.target.dataset.id}`);
+    
+                    location.reload();
+    
+                }
+            }
+            
+    
+            // Create follow function
+            try {
+                document.querySelector('#profile-follow').onclick = () => {
+                const profile_follow = document.querySelector('#profile-follow');
+                follow = profile_follow.innerHTML;
+                // Change follow status
+                fetch(`/follow/${profile_follow.dataset.id}`);
+    
+                followers = parseInt(document.querySelector('#view-followers').innerHTML);
+    
+                if (follow === "Follow") {
+                    document.querySelector('#profile-follow').innerHTML = "Unfollow";
+                    followers = followers + 1;
+                } else {
+                    document.querySelector('#profile-follow').innerHTML = "Follow";
+                    followers = followers - 1;
+                }
+    
+                document.querySelector('#view-followers').innerHTML = followers;
+    
+                }
+            } catch (error) {}
+            
+        });
+        
+    </script>
+
+{% endblock %}
