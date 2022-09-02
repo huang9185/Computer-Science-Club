@@ -1,0 +1,28 @@
+.body {
+    margin: 20px;
+}
+
+.row {
+    margin: 5px;
+}
+
+#graph-view {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#brand {
+    font-family: cursive;
+}
+
+#intake-title {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+    color: black;
+    font-weight: bolder;
+    text-align: center;
+}
+
+#disabled-message {
+    color: green;
+}

@@ -1,0 +1,30 @@
+{% extends 'diet/layout.html' %}
+
+{% block body %}
+    <h2>Register . . .</h2>
+
+    {% if message %}
+        <div class="alert alert-danger" role="alert">{{ message }}</div>
+    {% endif %}
+    
+    <form action="{% url 'register' %}" method='POST'>
+        {% csrf_token %}
+        <div class="mb-3">
+            <input name="username" placeholder="Username" class="form-control" autofocus type="text">
+        </div>
+        <div class="mb-3">
+            <input name="email" placeholder="Email" class="form-control" autofocus type="email" required>
+        </div>
+        <div class="mb-3">
+            <input placeholder="Password" name="password" class="form-control" autofocus type="password" aria-describedby="passwordHelp">
+            <div id="passwordHelp" class="form-text">
+                Must be 8-26 characters long
+            </div>
+        </div>
+        <div class="mb-3">
+            <input placeholder="Confirm Password" name="passwordConfirm" class="form-control" type="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+    <p class="text-muted">Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+{% endblock %}
