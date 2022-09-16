@@ -1,0 +1,21 @@
+{% block body %}
+    <form action="{% url 'register' %}" method="POST">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" name="email">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingUsername" name="username">
+            <label for="floatingUsername">Username</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" name="password">
+            <label for="floatingPassword">Password</label>
+        </div> 
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPasswordConfirm" name="confirmation">
+            <label for="floatingPasswordConfirm">Confirmation</label>
+        </div>
+        <button type="submit" class="btn btn-secondary-outline">Submit</button>
+    </form>
+{% endblock %}
