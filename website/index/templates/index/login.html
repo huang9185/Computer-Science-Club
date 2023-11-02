@@ -1,0 +1,19 @@
+{% extends 'index/layout.html' %}
+{% block body %}
+    {% if error %}
+        <div class="alert alert-secondary" role="alert">{{ error }}</div>
+    {% endif %}
+    <form class="form-authentication" action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="username" placeholder="Username">
+            <label for="username">Username</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" name="password" placeholder="Password">
+            <label for="password">Password</label>
+        </div>
+        <button type="submit" class="btn btn-light">Submit</button>
+    </form>
+    <p>Do not have an account? <a href="{% url 'register' %}">Register here</a></p>
+{% endblock %}

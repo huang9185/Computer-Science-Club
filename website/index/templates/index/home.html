@@ -1,0 +1,97 @@
+{% extends "index/layout.html" %}
+{% load static %}
+{% block body %}
+    <div class="main-view">
+        {% if message %}
+            <div>
+                <h1 class="mb-5 text-yellow">{{ message }}</h1>
+            </div>
+        {% endif %}
+        <hr class="col-3 col-md-2 mb-5" style="color: white;">
+        <div class="row g-5">
+            <div class="col-md-6" style="color: white;">
+                <h2>IDE Setup</h2>
+                <p>Before coding, you will need your virtual environment (IDE) ready. If not have one installed yet, choose one of the following options according to your desired programming language.</p>
+                <ul class="icon-list ps-0">
+                    <li class="d-flex align-items-start mb-1">
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg>
+                        <a href="https://www.jetbrains.com/help/pycharm/installation-guide.html#silent" target="_blank">Pycharm Installation Instruction for Python</a>
+                    </li>
+                    <li class="d-flex align-items-start mb-1">
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg>
+                        <a href="https://www.eclipse.org/downloads/" target="_blank">Eclipse Installation Instruction for C++</a>
+                    </li>
+                    <li class="d-flex align-items-start mb-1">
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg>
+                        <a href="https://www.eclipse.org/downloads/" target="_blank">Eclipse Installation Instruction for Java</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6" style="color: white;">
+                <h2>Website Account Registration</h2>
+                <p>Register accounts in all of the following websites to start practice.</p>
+                <ul class="icon-list ps-0">
+                    <li class="d-flex align-items-start mb-1">
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg>
+                        <a href="http://www.usaco.org/" target="_blank">USACO Website</a>
+                    </li>
+                    <li class="d-flex align-items-start mb-1">
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg>
+                        <a href="https://dmoj.ca/" target="_blank">DMOJ Website</a>
+                    </li>
+                    <li class="d-flex align-items-start mb-1">
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg>
+                        <a href="https://dmoj.ca/" target="_blank">DMOJ Website</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr class="col-3 col-md-2 mb-5" style="color: white;">
+        <div class="row g-5">
+            <div class="col-md-6" style="color: white;">
+                <h2>DMOJ Practice Problems</h2>
+                <p>Below are a list of problems we have tried in the first meeting. Click the links to check them out. Don't forget to register your account to keep the progress!</p>
+                <ul class="icon-list ps-0">
+                    <li class="d-flex align-items-start mb-1">
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg>
+                        <a href="https://dmoj.ca/problem/bf1" target="_blank">List Minimum - 3 points</a>
+                    </li>
+                    <li class="d-flex align-items-start mb-1">
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg>
+                        <a href="https://dmoj.ca/problem/ccc16s2" target="_blank">Tandem Bicycle - 5 points</a>
+                    </li>
+                    <li class="d-flex align-items-start mb-1">
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg>
+                        <a href="https://dmoj.ca/problem/ccc11s2" target="_blank">Multiple Choice - 5 points</a>
+                    </li>
+                    <li class="d-flex align-items-start mb-1">
+                        <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg>
+                        <a href="https://dmoj.ca/problem/acc9p4" target="_blank">Alchemy - 10 points</a>
+                    </li>
+                </ul>
+            </div>
+        <footer class="pt-5 my-5 text-muted border-top">
+            Created for the Westdale Computer Science Club · © 2022
+        </footer>
+    </div>
+{% endblock %}

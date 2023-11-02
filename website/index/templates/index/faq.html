@@ -1,0 +1,31 @@
+{% extends 'index/layout.html' %}
+
+{% load static %}
+{% block body %}
+    <div class="view">
+        <div class="p-5 mb-4 rounded-3 text-bg-dark question">
+            <div class="card-body">
+                <h5 class="card-title display-5 fw-bold">Ask Us</h5>
+                <input type="text" class="form-control" id="questionInput" placeholder="Title">
+                <textarea row="3" class="form-control" id="questionContent" placeholder="Content"></textarea>
+            </div>
+            <button href="#" class="btn btn-outline-light" id="questionBtn">Submit</button>
+        </div>
+        {% for question in questions %}
+            <div class="h-100 p-5 rounded-3 question">
+                <div class="card-body">
+                    <h5 class="card-title">{{ question.title }}</h5>
+                    <h6 class="card-subtitle mb-2" style="color: white;">Posted at {{ question.time }}</h6>
+                    <p class="card-text">Comments: {{ question.comments }}</p>
+                    <a href="{% url 'question' question.pk %}" class="btn btn-outline-light">Details</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <link href="{% static 'index/faq.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'index/faq.js' %}"></script>
+{% endblock %}

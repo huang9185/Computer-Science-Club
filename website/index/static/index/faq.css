@@ -1,0 +1,26 @@
+.view {
+    margin: 5px;
+}
+
+.question {
+    margin: 10px;
+    background-color: rgba(255, 200, 0, 0.8);
+}
+
+.textarea {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 3%;
+}
+
+#questionInput {
+    margin: 10px;
+}
+
+#questionContent {
+    margin: 10px;
+}
+
+.btn {
+    margin: 0em;
+}

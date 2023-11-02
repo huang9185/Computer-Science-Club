@@ -1,0 +1,26 @@
+{% extends 'index/layout.html' %}
+{% block body %}
+    {% if error %}
+        <div class="alert alert-secondary" role="alert">{{ error }}</div>
+    {% endif %}
+    <form class="form-authentication" action="{% url 'register' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="username" placeholder="Username" required>
+            <label for="username">Username</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" name="email" placeholder="Email" required>
+            <label for="username">Email</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" name="password" placeholder="Password">
+            <label for="password">Password</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" name="confirmation" placeholder="Confirmation">
+            <label for="confirmation">Confirmation</label>
+        </div>
+        <button type="submit" class="btn btn-light">Submit</button>
+    </form>
+{% endblock %}

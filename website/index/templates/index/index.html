@@ -1,0 +1,121 @@
+{% extends 'index/layout.html' %}
+
+{% block body %}
+    <div class="header p-5 mb-4 text-yellow">
+        <h1 class="display-2 fw-bold">WCS</h1>
+        <p class="fs-4 text" style="height: 30vh;">Westdale Computer Science</p>
+        <div class="arrow-header arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+            </svg>
+        </div>
+    </div>
+    <div class="header row">
+        <div class="col-md-6">
+            <div class="left h-100 p-5 rounded-3">
+                <h1 class="text-yellow">What We Do</h1>
+                <ul class="index-list">
+                    <li>Introduction and preparation for computer science-related competitions</li>
+                    <li>Lessons on basic algorithms and such</li>
+                    <li>Problem-solving using different languages</li>
+                    <li>Additional support for anyone in need of it</li>
+                    <li>CS career options disscussion</li>
+                    <li>Self-made competitions and prizes!</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                    <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="header row">
+        <div class="col-md-6">
+            <div class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                    <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+                </svg>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="right h-100 p-5 rounded-3">
+                <h1 class="text-yellow">Why Join Us</h1>
+                <ul class="index-list left">
+                    <li>You may learn something new and/or enhance your programming skills!</li>
+                    <li>Prizes (who doesn’t like em’?)</li>
+                    <li>Meet new people!</li>
+                    <li>The Computer Science industry is rapidly growing!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="header row">
+        <div class="col-md-6">
+            <div class="left h-100 p-5 rounded-3">
+                <h1 class="text-yellow">Languages We Use</h1>
+                <ul class="index-list">
+                    <li>Python</li>
+                    <li>C++</li>
+                    <li>Java</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                    <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="header row">
+        <div class="col-md-6">
+            <div class="arrow" hidden="True">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+                    <path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+                </svg>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="right h-100 p-5 rounded-3">
+                <h1 class="text-yellow">Competitions We Participate</h1>
+                <ul class="index-list left">
+                    <li>CCC</li>
+                    <li>USACO</li>
+                    <li>ECOO</li>
+                    <li>DMOJ contests</li>
+                    <li>Self-made contests</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
+
+{% block script %}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Change html children when window.width < 768px
+            if (window.innerWidth < 768) {
+                document.querySelectorAll('.arrow').forEach(arrow => {
+                    arrow.setAttribute('hidden', 'True');
+                });
+            } else {
+                document.querySelectorAll('.row').forEach(row => {
+                    row.hidden = true;
+                    row.querySelector('.arrow').onclick = () => {
+                        row.nextElementSibling.hidden = false;
+                        window.scrollTo(0, document.body.scrollHeight);
+                    }
+                });
+                document.querySelector('.arrow-header').onclick = () => {
+                    document.querySelector('.row').hidden = false;
+                    window.scrollTo(0, document.body.scrollHeight);
+                }
+            }
+        });
+    </script>
+{% endblock %}

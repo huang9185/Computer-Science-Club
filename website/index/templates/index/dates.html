@@ -1,0 +1,63 @@
+{% extends 'index/layout.html' %}
+{% load static %}
+{% block body %}
+    <h2 class="text">Today is {{ today }}</h2>
+
+    <div class="timeline">
+        <div class="success card mb-3">
+          <div class="card-header">September 26, 2022</div>
+          <div class="card-body">
+            <h5 class="card-title">First Club Meeting</h5>
+            <ul class="success list-group list-group-flush">
+              <li class="list-group-item">Register your account in this website</li>
+              <li class="list-group-item">Use DMOJ website as our practice platform</li>
+              <li class="list-group-item">Register DMOJ account if not already</li>
+              <li class="list-group-item">DMOJ practice problems: 
+                <a href="https://dmoj.ca/problem/bf1">10 points</a>, 
+                <a href="https://dmoj.ca/problem/ccc16s2">5 points</a>, 
+                <a href="https://dmoj.ca/problem/bf1">3 points</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="theme card mb-3">
+          <div class="card-header">October 7, 2022</div>
+          <div class="card-body">
+            <h5 class="card-title">Second Club Meeting</h5>
+            <p class="card-text">Time changed due to Thanksgiving holiday. Our second club meeting will be on the alternative Monday in Room 3055!</p>
+          </div>
+        </div>
+        <div class="card text-bg-dark mb-3">
+            <div class="card-header">December 17 - 20, 2022</div>
+            <div class="card-body">
+              <h5 class="card-title">USACO First Contest</h5>
+              <a href="http://www.usaco.org/index.php?page=history" target="_blank" class="btn btn-secondary">Details</a>
+            </div>
+        </div>
+        <div class="card text-bg-dark mb-3">
+            <div class="card-header">January 28 - 31, 2023</div>
+            <div class="card-body">
+              <h5 class="card-title">USACO Second Contest</h5>
+            </div>
+        </div>
+        <div class="card text-bg-dark mb-3">
+            <div class="card-header">February 15, 2023</div>
+            <div class="card-body">
+              <h5 class="card-title">Canadian Computing Competition</h5>
+              <a href="https://www.cemc.uwaterloo.ca/contests/ccc-cco.html" target="_blank" class="btn btn-secondary">Details</a>
+            </div>
+        </div>
+        <div class="card text-bg-dark mb-3">
+            <div class="card-header">February 25 - 28, 2023</div>
+            <div class="card-body">
+              <h5 class="card-title">USACO Third Contest</h5>
+            </div>
+        </div>
+        <div class="card text-bg-dark mb-3">
+            <div class="card-header">March 25 - 28, 2023</div>
+            <div class="card-body">
+              <h5 class="card-title">USACO US Open</h5>
+            </div>
+        </div>
+    </div>
+{% endblock %}

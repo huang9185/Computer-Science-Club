@@ -1,0 +1,116 @@
+.body {
+    margin: 5%;
+    
+}
+
+.success {
+    background-color: green;
+}
+
+.theme {
+    background-color: #FFC800;
+}
+
+.index-list {
+    color: #cccccc;
+    font-size: x-large;
+}
+
+.form-authentication {
+    margin: 10%;
+}
+
+body {
+    background-color: black;
+}
+
+.btn {
+    margin: 10px;
+}
+
+.text {
+    text-align: center;
+    margin: 8px;
+    color: white;
+}
+
+.text-yellow {
+    margin: 8px;
+    color: #FFC800;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.timeline {
+    padding: 2%;
+    border-style: none none none dashed;
+    border-width: 8px;
+    border-color: rbga(255, 255, 255, 0.5);
+}
+
+.header {
+    height: 75vh;
+    text-align: center;
+}
+
+@keyframes move {
+    0% {
+        top: 0%;
+    }
+    50% {
+        top: 5%;
+    }
+    100% {
+        top: 0%;
+    }
+}
+
+.arrow-header {
+    height: 30vh;
+    color: #FFC800;
+    position: relative;
+    animation-name: move;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes float {
+    0% {
+        top: 50%;
+    }
+    50% {
+        top: 55%;
+    }
+    100% {
+        top: 50%;
+    }
+}
+
+.arrow {
+    height: 30vh;
+    color: #FFC800;
+    position: relative;
+    animation-name: float;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+.arrow:hover {
+    color: rgb(255, 102, 0);
+}
+
+.arrow-header:hover {
+    color: rgb(255, 102, 0);
+}
+
+.arrow-icon {
+    margin-right: 5px;
+}

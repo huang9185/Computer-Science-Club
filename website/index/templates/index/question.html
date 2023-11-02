@@ -1,0 +1,37 @@
+{% extends "index/layout.html" %}
+{% load static %}
+{% block body %}
+    <div class="view question-view" data-id="{{ question.pk }}">
+        <div class="p-5 mb-4 rounded-3 bg-light">
+            <div class="card-body">
+                <h1 class="card-title display-5 fw-bold">{{ question.title }}</h1>
+                <p class="card-text col-md-8 fs-4">{{ question.content }}</p>
+                <p class="card-text"><small class="text-muted">Posted at {{ question.time }}</small></p>
+                {% if is_member %}
+                    <button class="btn btn-primary btn-lg" type="button" id="addComment">Comment</button>
+                {% else %}
+                    <p class="tips">*Only club members can add comments to questions and vote for comments.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="view answer-view"></div>
+    <div class="view comments-view">
+        {% for comment in comments %}
+            <div class="h-100 p-5 text-bg-dark rounded-3 comment">
+                <h2>By {{ comment.user }}</h2>
+                <p class="text-secondary">Votes: {{ comment.votes }}</p>
+                <p>{{ comment.content }}</p>
+                {% if is_member and not comment.is_voted %}
+                    <button class="btn btn-outline-light vote" type="button" data-id="{{ comment.pk }}">Vote</button>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+    
+    <link href="{% static 'index/question.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'index/question.js' %}"></script>
+{% endblock %}
